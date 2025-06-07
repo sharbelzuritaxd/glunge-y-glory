@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - Grunge & Glory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&family=Unica+One&display=swap" rel="stylesheet">
+  <style>
+    /* CSS GLOBAL - APLICADO A TODAS LAS PÁGINAS */
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      color: #00ff00; /* Verde neón */
+      background: #0e0e0e url('fondo-blur.jpg') no-repeat center center fixed; /* Asegúrate que 'fondo-blur.jpg' esté en la misma carpeta */
+      background-size: cover;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-bottom: 2px solid #ff0000; /* Rojo vibrante */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el header */
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: #00ff00; /* Verde neón */
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem; /* Aumentado el espacio entre enlaces */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #00ff00; /* Verde neón */
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'Unica One', sans-serif;
+      transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición más suave */
+      padding: 0.5rem 0.8rem; /* Padding para el área de hover */
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      color: #ff0000; /* Efecto hover rojo */
+      text-shadow: 0 0 8px rgba(255, 0, 0, 0.7); /* Sombra de texto al pasar el mouse */
+      background-color: rgba(255, 0, 0, 0.05); /* Ligero fondo al pasar el mouse */
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2.5rem; /* Más padding interno */
+      border-radius: 8px;
+      border: 2px solid #2d0000; /* Rojo oscuro */
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), inset 0 0 10px rgba(0, 255, 0, 0.3); /* Sombra exterior roja, interior verde */
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      margin-bottom: 2rem; /* Más margen inferior */
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 255, 0, 0.6); /* Sombra para títulos */
+      font-size: 2rem; /* Títulos un poco más grandes */
+    }
+
+    input, textarea {
+      background-color: #2a2a2a;
+      color: #00ff00; /* Verde neón */
+      border: 1px solid #ff0000; /* Borde rojo vibrante */
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 4px;
+      box-shadow: inset 0 0 8px rgba(255, 0, 0, 0.5); /* Sombra de entrada roja */
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(0, 255, 0, 0.5); /* Placeholder verde semitransparente */
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00ff00; /* Borde verde neón al enfocar */
+      box-shadow: inset 0 0 12px #00ff00; /* Sombra verde neón más intensa */
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: #4a1e1e; /* Rojo oscuro */
+      color: #00ff00; /* Verde neón */
+      border: 1px solid #ff0000; /* Borde rojo vibrante */
+      padding: 0.9rem 1.8rem; /* Más padding para los botones */
+      border-radius: 4px;
+      font-family: 'Share Tech Mono', monospace;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.05em; /* Espaciado entre letras */
+    }
+
+    button:hover {
+      background: #660000; /* Rojo más oscuro al pasar el mouse */
+      box-shadow: 0 0 10px #00ff00; /* Sombra verde neón más intensa */
+      color: #fff; /* Texto blanco al pasar el mouse */
+    }
+
+    .error {
+      color: #ff3b3b;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-align: left;
+      margin-top: -0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #00ff00; /* Verde neón */
+      border-top: 2px solid #ff0000; /* Rojo vibrante */
+      margin-top: 4rem; /* Más margen superior */
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el footer */
+    }
+
+    /* CSS ESPECÍFICO DE LA PÁGINA DE INICIO */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    }
+
+    .hero h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem; /* Tamaño más grande para el título principal */
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      color: #00ff00; /* Título principal en verde neón */
+      letter-spacing: 0.1em; /* Más espaciado para el título */
+    }
+
+    .hero p {
+      font-family: 'Unica One', sans-serif;
+      font-size: 1.3rem; /* Texto más grande */
+      max-width: 800px; /* Ancho máximo para el párrafo */
+      margin: 0 auto 2.5rem; /* Más margen inferior */
+      line-height: 1.8; /* Mayor altura de línea */
+      color: #ccc;
+    }
+
+    a.boton-tienda {
+      /* Estilos ya definidos en el CSS global para button, pero específicos para este enlace */
+      font-family: 'Share Tech Mono', monospace; /* Aplicar la fuente también aquí */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GRUNGE & GLORY</h1>
+    <nav>
+      <ul>
+        <li><a href="https://1234pp.netlify.app/tienda">Inicio</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="comentarios.html">Foro</a></li>
+        <li><a href="usario y resgristro.html">Registro</a></li>
+        <li><a href="calendario.html">Agenda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Explora el Mundo Grunge & Glory</h2>
+      <p>Tu destino definitivo para la moda alternativa, eventos de música underground y una comunidad vibrante. Sumérgete en el espíritu del punk, grunge y la cultura underground.</p>
+      <a href="tienda.html" class="boton-tienda button">Visita nuestra Tienda</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Grunge & Glory. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
